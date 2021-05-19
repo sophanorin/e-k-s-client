@@ -1,0 +1,52 @@
+.product__lists {
+  min-height: 90vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.product__lists h1 {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.create__btn {
+  display: block;
+  float: right;
+  margin: 1rem;
+  padding: 1rem 3rem;
+  background: #dde02d;
+  border: 0.1rem solid rgb(32, 24, 1);
+  border-radius: 0.5rem;
+  outline: none;
+  color: #2b2b2b;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.create__btn:hover {
+  background: #8b8d19;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table tbody tr:nth-of-type(odd) {
+  background-color: #f4f4f4;
+}
+.table td,
+.table th {
+  text-align: left;
+  border: 0.1rem solid #e4e4e4;
+  padding: 0.5rem;
+}
+.table button {
+  margin: 0 0.2rem;
+}
+
+.table__productlists {
+  margin-bottom: 3rem;
+}
+.table__productlists button {
+  padding: 0rem 1rem;
+}

@@ -1,0 +1,121 @@
+.wrapper_products {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: white;
+}
+.header_productslist {
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  pointer-events: none;
+}
+.header_productslist h2 {
+  font-size: 5rem;
+  margin-top: 7rem;
+  text-align: center;
+  z-index: 2;
+}
+.header_productslist span {
+  font-size: 7rem;
+  font-weight: 1000;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #8e8e8e;
+  opacity: 0.5;
+  text-align: center;
+}
+.header_productslist p {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.products-container {
+  width: 70%;
+  min-height: 100vh;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;
+}
+
+.op {
+  width: 70%;
+}
+.category__center {
+  margin: 3rem auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 3rem 2rem;
+}
+
+@media only screen and (max-width: 1100px) {
+  .category__center {
+    width: 70%;
+
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .category__products .product__header img {
+    width: 100%;
+    object-fit: contain;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .category__center {
+    width: 80%;
+    grid-template-columns: 1fr 1fr;
+  }
+  .category__products .product__header img {
+    width: 100%;
+    object-fit: contain;
+    text-align: center;
+  }
+  .header_productslist h2 {
+    font-size: 4rem;
+  }
+  .header_productslist span {
+    font-size: 5rem;
+  }
+  .header_productslist p {
+    font-size: 1.6rem;
+  }
+}
+
+@media only screen and (max-width: 568px) {
+  .category__center {
+    width: 50%;
+    grid-template-columns: 1fr;
+    gap: 1.5rem 1rem;
+  }
+
+  .category__products .product__header {
+    height: 20rem;
+  }
+
+  .category__products .product__header img {
+    object-fit: contain;
+  }
+}
+@media only screen and (max-width: 497px) {
+  .header_productslist span {
+    font-size: 5rem;
+  }
+}
+@media only screen and (max-width: 690px) {
+  .header_productslist h2 {
+    margin-top: 4rem;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .products-container {
+    grid-template-columns: repeat(auto-fit, maxmin(30rem, 1fr));
+  }
+}

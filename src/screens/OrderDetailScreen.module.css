@@ -1,0 +1,97 @@
+.payment_detail .payment_info {
+  margin-top: 1rem;
+  margin-left: 2rem;
+}
+.payment_detail .payment_info > p {
+  font-size: 2rem;
+}
+.payment_detail .payment_info .payment_status {
+  font-weight: 700;
+}
+#paid {
+  color: green;
+}
+#notpaid {
+  color: red;
+}
+.orderdetail_wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-height: 90vh;
+  width: 90%;
+  margin: 5rem auto;
+}
+.orderdetail_wrapper .col_1 {
+  flex: 1 1 50rem;
+  flex-direction: column;
+}
+.shadow {
+  box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1), 0px 0px 40px rgba(0, 0, 0, 0.1);
+}
+.orderdetail_wrapper .col_1 .payment_detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border: 1px solid #919191;
+  padding: 3rem;
+}
+.payment_detail div {
+  margin-left: 2rem;
+}
+.orders_detail {
+  border: 1px solid #919191;
+  padding: 3rem;
+}
+
+.orders_detail ul {
+  margin-top: 3rem;
+  width: 100%;
+}
+
+.orders_detail .card_orderdetail {
+  max-height: 12rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #919191;
+}
+.orders_detail .card_orderdetail .col_1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.col_1 div {
+  margin: 0;
+}
+.summary_detail {
+  flex: 1 1 40rem;
+  min-width: 40rem;
+  max-height: 25rem;
+  border: 1px solid #333333;
+  box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1), 0px 0px 40px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  display: block;
+  flex-direction: column;
+}
+
+.summary_detail h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  color: #29303b;
+}
+
+.summary_detail ul li {
+  display: flex;
+  margin: 1.5rem 0rem;
+}
+
+.summary_detail ul li div:nth-child(1) {
+  flex: 1 1 20rem;
+}
+.summary_detail ul li:nth-child(4) {
+  border-top: 1px solid #333333;
+  padding-top: 1rem;
+}

@@ -1,0 +1,26 @@
+.paginationContainer {
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  padding: 1rem;
+  margin: 1rem 0.1rem;
+  background: #04e7f7;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  color: #2e2e2e;
+}
+.button:hover {
+  background: #04b0bd;
+}
+
+.active {
+  background: #ec5252;
+}
+.active:hover {
+  background: #c23434;
+}

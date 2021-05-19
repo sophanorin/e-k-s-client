@@ -1,0 +1,128 @@
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
+.checkout_wrapper {
+  display: flex;
+  justify-content: flex-start;
+  min-height: 90vh;
+  width: 70%;
+  margin: 5rem auto;
+}
+
+.checkout_wrapper div:nth-child(1) {
+  flex: 1 1 40rem;
+  width: 60rem;
+}
+
+.payment {
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.payment div {
+  margin: 2rem 0rem;
+}
+.payment div label {
+  margin: 0rem 1rem;
+}
+
+.order_details {
+  text-align: start;
+}
+
+.order_details h3 {
+  margin: 1rem 0rem;
+}
+
+.order_details ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  margin: 1rem 0rem;
+}
+
+.card_order {
+  border: 1px solid #919199;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.card_order .col_1 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.card_order .col_1 div {
+  justify-self: center;
+  align-self: start;
+}
+.card_order .col_1 div h4 {
+  font-size: 1.5rem;
+}
+
+.card_order .col_2 {
+  flex: 1 1 15rem;
+  margin: 0rem 1rem;
+}
+
+.summary {
+  flex: 2;
+  max-width: 40rem;
+  height: 30rem;
+  border: 1px solid #333333;
+  box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1), 0px 0px 40px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.summary h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  color: #29303b;
+}
+
+.summary ul li {
+  display: flex;
+  margin: 1.5rem 0rem;
+}
+
+.summary ul li div:nth-child(1) {
+  flex: 1 1 20rem;
+}
+.summary ul li:nth-child(4) {
+  border-top: 1px solid #333333;
+  padding-top: 1rem;
+}
+
+.summary button {
+  display: block;
+  justify-self: self-end;
+  align-self: self-end;
+  width: 100%;
+  border: none;
+  outline: 0;
+  border-radius: 0.2rem;
+  background: #ec5252;
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  text-align: center;
+  padding: 2rem 0rem;
+}
+.summary button:hover {
+  background: #a13838;
+}
+.summary button:focus {
+  border: none;
+}

@@ -1,0 +1,21 @@
+.loadingBox {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 2/2;
+}
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.loading {
+  width: 6rem;
+  height: 6rem;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 3px solid #ccc;
+  border-top-color: #fa0021;
+  animation: spinner 0.6s linear infinite;
+}

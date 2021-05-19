@@ -1,0 +1,6 @@
+# https://www.robotstxt.org/robotstxt.html
+Allow: /*.html$
+User-agent: *
+Disallow: *.dl.html
+
+Sitemap: https://numstore.netlify.app/shop

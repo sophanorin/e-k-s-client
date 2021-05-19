@@ -1,0 +1,107 @@
+.wishlist {
+  min-height: 90vh;
+  width: 90%;
+  margin: 5rem auto;
+}
+
+.wishlist h1 {
+  margin: 1rem 0rem;
+}
+
+.wishlist_btn {
+  border: none;
+  outline: 0;
+  border-radius: 0.2rem;
+  background: #ec5252;
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  text-align: center;
+  padding: 2rem 5rem;
+}
+.wishlist_btn:hover {
+  background: #a13838;
+}
+.wishlist_btn:focus {
+  border: none;
+}
+
+.col_1 {
+  flex: 3 1 30rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.col_1 img {
+  max-width: 10rem;
+  max-height: 10rem;
+  object-fit: contain;
+  margin: 0.5rem;
+}
+
+.col_1 div {
+  width: 100%;
+  height: 100%;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-transform: capitalize;
+}
+
+.col_1 div h4 {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.col_1 div p {
+  font-size: 1.2rem;
+}
+.card_order {
+  border: 1px solid #919199;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.card_order .col_1 {
+  flex: 1 1 30rem;
+  display: flex;
+  align-items: center;
+}
+
+.card_order .col_1 div {
+  justify-self: center;
+  align-self: start;
+}
+.card_order .col_1 div h4 {
+  font-size: 1.5rem;
+}
+.card_order .col_2 {
+  flex: 1 1 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card_order .col_2 h3 {
+  color: #ec5252;
+  font-weight: 800;
+}
+.card_order .col_3 {
+  flex: 1 1 25rem;
+  margin: 0rem 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+@media screen and (max-width: 762px) {
+  .card_order .col_3 {
+    margin: 1rem 0rem;
+    justify-content: center;
+  }
+}

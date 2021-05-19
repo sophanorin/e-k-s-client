@@ -1,0 +1,47 @@
+.account {
+  min-height: 90vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.account h1 {
+  margin-bottom: 1rem;
+}
+.accounts_container {
+  width: 40rem;
+}
+.accounts_container ul {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.accounts_container ul li {
+  margin: 1rem 0rem;
+  display: flex;
+  flex-direction: column;
+}
+.accounts_container ul li label {
+  margin-bottom: 0.5rem;
+}
+.accounts_container ul li input {
+  padding: 1rem;
+}
+
+.accounts_container ul li button {
+  margin: 1rem 0rem;
+  padding: 1rem 4rem;
+  color: #fff;
+  background: #ec5252;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.accounts_container ul li button:hover {
+  background: #a13838;
+}

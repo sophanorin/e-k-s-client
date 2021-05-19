@@ -1,0 +1,28 @@
+.messageBox {
+  width: 90%;
+  min-height: 4rem;
+  margin: auto;
+  border-radius: 1rem;
+  padding: 1rem;
+  background: rgba(252, 0, 34, 0.5);
+}
+
+.messageBox p {
+  font-size: 1.5rem;
+  color: rgb(253, 201, 201);
+  text-align: center;
+  word-wrap: break-word;
+  padding: 0rem 2rem;
+}
+
+.success {
+  background: rgb(15, 240, 64);
+}
+.success p {
+  color: #000;
+  font-size: 1.5rem;
+}
+
+.danger {
+  background: rgba(252, 0, 34, 0.5);
+}

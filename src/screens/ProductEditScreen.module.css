@@ -1,0 +1,38 @@
+.product__edit {
+  min-height: 90vh;
+  text-align: center;
+}
+.product__edit > form {
+  margin: 5rem auto;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+}
+.form > div {
+  margin: 2rem auto;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  width: 40rem;
+}
+
+.form > div label {
+  flex: 1;
+  text-align: left;
+}
+
+.form > div input {
+  flex: 2;
+  padding: 0.5rem;
+  text-align: left;
+}
+.form div:last-child {
+  justify-content: center;
+}
+.form div:last-child button {
+  padding: 1rem 5rem;
+}
