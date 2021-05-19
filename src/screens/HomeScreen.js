@@ -1,7 +1,6 @@
 import React from "react";
 import Home from "../components/Home";
 import Products from "./Products";
-import ProductsSlider from "./ProductsSlider";
 
 function HomeScreen() {
   return (

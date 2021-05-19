@@ -7,7 +7,7 @@ import {
 export const addItemWishlist =
   (productID, qty) => async (dispatch, getState) => {
     const { data } = await Axios.get(
-      `${process.env.ENDPOINT}/api/products/${productID}`
+      `${process.env.REACT_APP_API_ENDPOINT}/api/products/${productID}`
     );
     dispatch({
       type: ADD_ITEM_WISHLIST,
