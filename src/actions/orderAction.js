@@ -27,7 +27,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
     } = getState();
 
     const { data } = await Axios.post(
-      "https://numstorerserver.herokuapp.com/api/orders",
+      `${process.env.ENDPOINT}/api/orders`,
       order,
       {
         headers: {
@@ -54,7 +54,7 @@ export const detailOrder = (orderID) => async (dispatch) => {
   dispatch({ type: DETAIL_ORDER_REQUEST });
   try {
     const { data } = await Axios.get(
-      `https://numstorerserver.herokuapp.com/api/orders/${orderID}`
+      `${process.env.ENDPOINT}/api/orders/${orderID}`
     );
     dispatch({ type: DETAIL_ORDER_SECCESS, payload: data });
   } catch (error) {
@@ -75,7 +75,7 @@ export const listOrderMine = () => async (dispatch, getState) => {
       userSignin: { userInfo },
     } = getState();
     const { data } = await Axios.get(
-      "https://numstorerserver.herokuapp.com/api/orders/mine",
+      `${process.env.ENDPOINT}/api/orders/mine`,
       {
         headers: {
           Authorization: `Bearer ${userInfo.token}`,
@@ -100,12 +100,9 @@ export const listOrders = () => async (dispatch, getState) => {
     userSignin: { userInfo },
   } = getState();
   try {
-    const { data } = await Axios.get(
-      "https://numstorerserver.herokuapp.com/api/orders",
-      {
-        headers: { Authorization: `Bearer ${userInfo.token}` },
-      }
-    );
+    const { data } = await Axios.get(`${process.env.ENDPOINT}/api/orders`, {
+      headers: { Authorization: `Bearer ${userInfo.token}` },
+    });
     dispatch({ type: ORDER_LIST_SUCCESS, payload: data });
   } catch (error) {
     const message =
@@ -122,7 +119,7 @@ export const deleteOrder = (orderId) => async (dispatch, getState) => {
   } = getState();
   try {
     const { data } = Axios.delete(
-      `https://numstorerserver.herokuapp.com/api/orders/${orderId}`,
+      `${process.env.ENDPOINT}/api/orders/${orderId}`,
       {
         headers: { Authorization: `Bearer ${userInfo.token}` },
       }

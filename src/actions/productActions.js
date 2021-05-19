@@ -23,9 +23,7 @@ import {
 export const listProducts = () => async (dispatch) => {
   dispatch({ type: PRODUCT_LIST_REQUEST });
   try {
-    const { data } = await Axios.get(
-      "https://numstorerserver.herokuapp.com/api/products"
-    );
+    const { data } = await Axios.get(`${process.env.ENDPOINT}/api/products`);
     dispatch({ type: PRODUCT_LIST_SECCESS, payload: data });
   } catch (error) {
     dispatch({ type: PRODUCT_LIST_FAIL, payload: error.message });
@@ -36,7 +34,7 @@ export const detialProduct = (productId) => async (dispatch) => {
   dispatch({ type: PRODUCT_DETAIL_REQUEST, payload: productId });
   try {
     const { data } = await Axios.get(
-      `https://numstorerserver.herokuapp.com/api/products/${productId}`
+      `${process.env.ENDPOINT}/api/products/${productId}`
     );
     dispatch({ type: PRODUCT_DETAIL_SECCESS, payload: data });
   } catch (error) {
@@ -56,7 +54,7 @@ export const createProduct = () => async (dispatch, getState) => {
   } = getState();
   try {
     const { data } = await Axios.post(
-      "https://numstorerserver.herokuapp.com/api/products",
+      `${process.env.ENDPOINT}/api/products`,
       {},
       {
         headers: { Authorization: `Bearer ${userInfo.token}` },
@@ -81,7 +79,7 @@ export const updateProduct = (product) => async (dispatch, getState) => {
   } = getState();
   try {
     const { data } = await Axios.put(
-      `https://numstorerserver.herokuapp.com/api/products/${product._id}`,
+      `${process.env.ENDPOINT}/api/products/${product._id}`,
       product,
       {
         headers: { Authorization: `Bearer ${userInfo.token}` },
@@ -103,7 +101,7 @@ export const deleteProduct = (productId) => async (dispatch, getState) => {
   } = getState();
   try {
     const { data } = await Axios.delete(
-      `https://numstorerserver.herokuapp.com/api/products/${productId}`,
+      `${process.env.ENDPOINT}/api/products/${productId}`,
       {
         headers: { Authorization: `Bearer ${userInfo.token}` },
       }
@@ -121,8 +119,9 @@ export const deleteProduct = (productId) => async (dispatch, getState) => {
 export const productPerPage = (startIndex, endIndex) => async (dispatch) => {
   dispatch({ type: PRODUCT_PER_PAGE_REQUEST });
   try {
+    console.log(process.env.ENDPOINT);
     const { data } = await Axios.get(
-      `http://localhost:5000/api/products/limit/${startIndex}&${endIndex}`
+      `${process.env.ENDPOINT}/api/products/limit/${startIndex}&${endIndex}`
     );
     dispatch({ type: PRODUCT_PER_PAGE_SECCESS, payload: data });
   } catch (error) {

@@ -17,9 +17,7 @@ import {
 export const categorylist = () => async (dispatch, getState) => {
   dispatch({ type: ALL_CATEGORY_REQUEST });
   try {
-    const { data } = await Axios.get(
-      "https://numstorerserver.herokuapp.com/api/category"
-    );
+    const { data } = await Axios.get(`${process.env.ENDPOINT}/api/category`);
     dispatch({ type: ALL_CATEGORY_SUCCESS, payload: data });
   } catch (error) {
     dispatch({
@@ -40,7 +38,7 @@ export const specificcategory = (id) => async (dispatch, getState) => {
     } = getState();
 
     const { data } = await Axios.get(
-      `https://numstorerserver.herokuapp.com/api/category/${id}`,
+      `${process.env.ENDPOINT}/api/category/${id}`,
       {
         headers: {
           authorization: `Bearer ${userInfo.token}`,
@@ -66,7 +64,7 @@ export const createcategory = (name) => async (dispatch, getState) => {
   } = getState();
   try {
     const { data } = await Axios.post(
-      "https://numstorerserver.herokuapp.com/api/category",
+      `${process.env.ENDPOINT}/api/category`,
       { name },
       {
         headers: { Authorization: `Bearer ${userInfo.token}` },
@@ -91,7 +89,7 @@ export const updatecategory = (id, name) => async (dispatch, getState) => {
   } = getState();
   try {
     const { data } = await Axios.put(
-      `https://numstorerserver.herokuapp.com/api/category/${id}`,
+      `${process.env.ENDPOINT}/api/category/${id}`,
       name,
       {
         headers: { Authorization: `Bearer ${userInfo.token}` },
@@ -114,7 +112,7 @@ export const deletecategory = (id) => async (dispatch, getState) => {
   } = getState();
   try {
     const { data } = await Axios.delete(
-      `https://numstorerserver.herokuapp.com/api/category/${id}`,
+      `${process.env.ENDPOINT}/api/category/${id}`,
       {
         headers: { Authorization: `Bearer ${userInfo.token}` },
       }

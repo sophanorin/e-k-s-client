@@ -18,10 +18,8 @@ import {
 export const signin = (email, password) => async (dispatch) => {
   dispatch({ type: USER_SIGNIN_REQUEST, payload: { email, password } });
   try {
-    const {
-      data,
-    } = await Axios.post(
-      "https://numstorerserver.herokuapp.com/api/users/signin",
+    const { data } = await Axios.post(
+      `${process.env.ENDPOINT}/api/users/signin`,
       { email, password }
     );
     dispatch({ type: USER_SIGNIN_SUCCESS, payload: data });
@@ -44,7 +42,7 @@ export const register = (name, email, password, phone) => async (dispatch) => {
   });
   try {
     const { data } = await Axios.post(
-      "https://numstorerserver.herokuapp.com/api/users/register",
+      `${process.env.ENDPOINT}/api/users/register`,
       {
         name,
         email,
@@ -79,7 +77,7 @@ export const detailUser = (userID) => async (dispatch, getState) => {
   } = getState();
   try {
     const { data } = await Axios.get(
-      `https://numstorerserver.herokuapp.com/api/users/${userID}`,
+      `${process.env.ENDPOINT}/api/users/${userID}`,
       {
         headers: {
           Authorization: { token: `Bearer ${userInfo.token}` },
@@ -105,7 +103,7 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
   } = getState();
   try {
     const { data } = await Axios.put(
-      "https://numstorerserver.herokuapp.com/api/users/profile",
+      `${process.env.ENDPOINT}/api/users/profile`,
       user,
       {
         headers: { Authorization: `Bearer ${userInfo.token}` },
