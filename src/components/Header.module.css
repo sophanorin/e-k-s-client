@@ -332,7 +332,9 @@
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
-  background: chocolate;
+  background: #a8a8a8;
+  overflow: hidden;
+  text-align: center;
 }
 
 .dropdown_profile h2 {

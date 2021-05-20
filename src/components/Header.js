@@ -11,6 +11,7 @@ import { RiProductHuntLine, RiDashboardLine } from "react-icons/ri";
 import * as headerStyles from "./Header.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { signout } from "../actions/userActions";
+import MaleIcon from "../assets/user_male.ico";
 
 function Header(props) {
   const [toggle, setToggle] = useState(false);
@@ -44,7 +45,7 @@ function Header(props) {
 
           <div className={headerStyles.nav__logo}>
             <Link to="/">
-              <h1>K.E.S</h1>
+              <h1>E.K.S</h1>
             </Link>
           </div>
 
@@ -167,7 +168,7 @@ function Header(props) {
                   <div className={headerStyles.dropdown_profile}>
                     <div>
                       <div className={headerStyles.profile_image}>
-                        {/* <img src={""} alt="" /> */}
+                        <img src={MaleIcon} alt="Male Icon" />
                       </div>
                       <h2>{userInfo.name.substring(0, 10) + "..."}</h2>
                     </div>

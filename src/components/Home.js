@@ -8,7 +8,7 @@ function Home() {
     <section className={homeStyles.container_home}>
       <img src={cover} alt="" />
       <div className={homeStyles.info}>
-        <h2>NUM STORE</h2>
+        <h2>E.K.S</h2>
         <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry.

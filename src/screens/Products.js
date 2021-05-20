@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Product from "../components/Product";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
 import * as productsStyles from "./Products.module.css";
-import { listProducts, productPerPage } from "../actions/productActions";
+import { productPerPage } from "../actions/productActions";
 import { memo } from "react/cjs/react.production.min";
 
 function Products() {
@@ -28,9 +28,10 @@ function Products() {
         <>
           <div className={productsStyles.header_productslist}>
             <h2>Quality Products</h2>
-            <span>STUDENTS</span>
+            <span>PROFESSIONAL</span>
             <p>
-              There are products that quality make from students in university
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry.
             </p>
           </div>
           <div
