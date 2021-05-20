@@ -28,8 +28,7 @@ const FindMaxLeftAndMaxRight = (currentPage, amountBtn, pages) => {
 function Pagination({ products, amountBtn, itemPerPage }) {
   const dispatch = useDispatch();
   const [currentPage, setCurrentPage] = useState(1);
-  const [pages, setPages] = useState(Math.round(products.length / itemPerPage));
-
+  const [pages, setPages] = useState(Math.ceil(products.length / itemPerPage));
   let startIndex = (currentPage - 1) * itemPerPage;
   let endIndex = startIndex + itemPerPage;
 

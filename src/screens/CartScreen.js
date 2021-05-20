@@ -98,7 +98,8 @@ function CartScreen(props) {
               SubItems : ({cartItems.reduce((a, c) => a + c.qty, 0)} items)
             </h4>
             <h2>
-              Total : ${cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
+              Total : $
+              {cartItems.reduce((a, c) => a + c.price * c.qty, 0).toFixed(2)}
             </h2>
             <Link to="/checkout">Checkout</Link>
           </div>

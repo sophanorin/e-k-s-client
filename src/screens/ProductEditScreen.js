@@ -71,12 +71,12 @@ export default function ProductEditScreen(props) {
     const file = e.target.files[0];
     const info = new FormData();
     info.append("file", file);
-    info.append("upload_preset", "num-store");
-    info.append("cloud_name", "num");
+    info.append("upload_preset", "kxiv2d2e");
+    info.append("cloud_name", "Rinnn");
     try {
       setLoadingUpload(true);
       const { data } = await Axios.post(
-        "https://api.cloudinary.com/v1_1/numstore/image/upload",
+        "https://api.cloudinary.com/v1_1/lecloud/image/upload",
         info
       );
       const { secure_url: url } = data;

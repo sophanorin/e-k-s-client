@@ -60,7 +60,10 @@
 }
 
 .products_list {
-  min-height: 90vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .filter {
@@ -95,7 +98,7 @@
   margin: 0rem 0.5rem;
 }
 .category__center {
-  margin: 3rem auto;
+  margin: 2rem auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 3rem 2rem;

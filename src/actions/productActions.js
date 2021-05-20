@@ -93,6 +93,7 @@ export const updateProduct = (product) => async (dispatch, getState) => {
       error.response && error.response.data.message
         ? error.response.data.message
         : error.message;
+
     dispatch({ type: PRODUCT_UPDATE_FAIL, error: message });
   }
 };
