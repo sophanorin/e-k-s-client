@@ -48,13 +48,13 @@ function Footer() {
               <span>
                 <AiOutlineMail />
               </span>
-              numrobotics@gmail.com
+              eks@shop.com
             </div>
             <div>
               <span>
                 <FiPhone />
               </span>
-              096-827-0304
+              099-99-99-99
             </div>
             <div>
               <span>
