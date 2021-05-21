@@ -35,11 +35,12 @@
 }
 
 .navigation {
-  position: relative;
+  position: sticky;
+  top: 0;
   max-height: 10vh;
   width: 100vw;
   box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
-  z-index: 100;
+  z-index: 999;
 }
 
 .header {
