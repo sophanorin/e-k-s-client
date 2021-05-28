@@ -9,11 +9,16 @@ li {
   min-height: 90vh;
   width: 70%;
   margin: 5rem auto;
+  gap: 1rem;
 }
 
-.checkout_wrapper div:nth-child(1) {
-  flex: 1 1 40rem;
+.checkout_wrapper > div:nth-child(1) {
+  flex: 2 1 40rem;
   width: 60rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .payment {
@@ -31,6 +36,7 @@ li {
 }
 
 .order_details {
+  width: 100%;
   text-align: start;
 }
 
@@ -39,42 +45,63 @@ li {
 }
 
 .order_details ul {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   gap: 2rem;
-  margin: 1rem 0rem;
 }
-
+.order_details ul li {
+  width: 100%;
+}
 .card_order {
+  width: 100%;
+  height: 10rem;
   border: 1px solid #919199;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  justify-content: space-evenly;
 }
 .card_order .col_1 {
-  flex: 1;
+  flex: 1 1 25rem;
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
-
+.card_order .col_1 img {
+  text-align: start;
+  height: 9.8rem;
+  width: auto;
+  object-fit: contain;
+}
 .card_order .col_1 div {
-  justify-self: center;
-  align-self: start;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 .card_order .col_1 div h4 {
   font-size: 1.5rem;
+  word-wrap: break-word;
 }
-
+.card_order .col_1 div p {
+  word-wrap: break-word;
+  font-size: 1rem;
+  color: #919199;
+}
 .card_order .col_2 {
+  text-align: center;
   flex: 1 1 15rem;
-  margin: 0rem 1rem;
 }
 
 .summary {
   flex: 2;
-  max-width: 40rem;
+  max-width: 60rem;
   height: 30rem;
   border: 1px solid #333333;
   box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1), 0px 0px 40px rgba(0, 0, 0, 0.1);
@@ -92,6 +119,7 @@ li {
 
 .summary ul li {
   display: flex;
+  justify-content: space-between;
   margin: 1.5rem 0rem;
 }
 
@@ -125,4 +153,33 @@ li {
 }
 .summary button:focus {
   border: none;
+}
+
+@media screen and (max-width: 1387px) {
+  .payment {
+    height: auto;
+    margin-bottom: 2rem;
+  }
+  .checkout_wrapper {
+    align-items: center;
+    flex-direction: column;
+  }
+  .summary {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1295px) {
+  .summary {
+    height: fit-content;
+  }
+}
+
+@media screen and (max-width: 814px) {
+  .checkout_wrapper > div:nth-child(1) {
+    width: 100%;
+  }
+  .card_order {
+    height: auto;
+  }
 }

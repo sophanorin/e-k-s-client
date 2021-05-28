@@ -31,22 +31,16 @@ function OrderDetailScreen(props) {
                 <h3>Method : {orderInfo.paymentMethod}</h3>
                 <p>
                   Status :{" "}
-                  {orderInfo.isPaid ? (
-                    <span
-                      className={orderdetailStyles.payment_status}
-                      id="paid"
-                    >
-                      Piad{" "}
-                    </span>
-                  ) : (
-                    <span
-                      className={orderdetailStyles.payment_status}
-                      id="notpaid"
-                    >
-                      {" "}
-                      Haven't paid{" "}
-                    </span>
-                  )}
+                  <span
+                    className={`${orderdetailStyles.payment_status} ${
+                      orderInfo.isPaid
+                        ? orderdetailStyles.paid
+                        : orderdetailStyles.notpaid
+                    }`}
+                    id="paid"
+                  >
+                    {orderInfo.isPaid ? "Piad" : "Haven't paid"}
+                  </span>
                 </p>
               </div>
             </div>
@@ -80,24 +74,24 @@ function OrderDetailScreen(props) {
               <h2>Summary</h2>
               <ul>
                 <li>
-                  <div>Items Price</div>
-                  <div>$ {orderInfo.itemsPrice}</div>
+                  <p>Items Price</p>
+                  <p>$ {orderInfo.itemsPrice}</p>
                 </li>
                 <li>
-                  <div>Tax Price</div>
-                  <div>$ {orderInfo.taxPrice}</div>
+                  <p>Tax Price</p>
+                  <p>$ {orderInfo.taxPrice}</p>
                 </li>
                 <li>
-                  <div>Delivery Price</div>
-                  <div>$ {orderInfo.deliveryPrice}</div>
+                  <p>Delivery Price</p>
+                  <p>$ {orderInfo.deliveryPrice}</p>
                 </li>
                 <li>
-                  <div>
+                  <p>
                     <strong> Total Price</strong>
-                  </div>
-                  <div>
-                    <strong> $ {orderInfo.totalPrice}</strong>
-                  </div>
+                  </p>
+                  <p>
+                    <strong> $ {orderInfo.totalPrice.toFixed(2)}</strong>
+                  </p>
                 </li>
               </ul>
             </div>

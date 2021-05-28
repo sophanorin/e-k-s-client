@@ -1,17 +1,28 @@
-.payment_detail .payment_info {
-  margin-top: 1rem;
-  margin-left: 2rem;
+.payment_detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border: 1px solid #919191;
+  padding: 3rem;
 }
-.payment_detail .payment_info > p {
+.payment_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin-left: 1rem;
+}
+.payment_info > p {
   font-size: 2rem;
 }
-.payment_detail .payment_info .payment_status {
+.payment_info .payment_status {
   font-weight: 700;
 }
-#paid {
+
+.paid {
   color: green;
 }
-#notpaid {
+.notpaid {
   color: red;
 }
 .orderdetail_wrapper {
@@ -21,58 +32,81 @@
   min-height: 90vh;
   width: 90%;
   margin: 5rem auto;
+  gap: 1rem;
 }
 .orderdetail_wrapper .col_1 {
-  flex: 1 1 50rem;
-  flex-direction: column;
+  flex: 2 1 30rem;
+}
+.orderdetail_wrapper > div:last-child {
+  flex: 1 1 20rem;
 }
 .shadow {
   box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1), 0px 0px 40px rgba(0, 0, 0, 0.1);
 }
-.orderdetail_wrapper .col_1 .payment_detail {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  border: 1px solid #919191;
-  padding: 3rem;
-}
-.payment_detail div {
-  margin-left: 2rem;
-}
+
 .orders_detail {
   border: 1px solid #919191;
   padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .orders_detail ul {
   margin-top: 3rem;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
-
-.orders_detail .card_orderdetail {
-  max-height: 12rem;
+.orders_detail ul li {
+  width: 100%;
+}
+.card_orderdetail {
+  width: 100%;
+  height: 12rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   border: 1px solid #919191;
 }
-.orders_detail .card_orderdetail .col_1 {
+.card_orderdetail .col_1 {
+  flex: 2 1 30rem;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
 }
-.col_1 div {
-  margin: 0;
+.card_orderdetail .col_1 div {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  text-align: start;
+}
+.card_orderdetail .col_1 div h4 {
+  word-wrap: break-word;
+}
+
+.col_1 img {
+  height: 11.8rem;
+  width: auto;
+}
+.card_orderdetail > div:last-child {
+  flex: 1 1 20rem;
+  margin: 1rem 0rem;
+  text-align: center;
 }
 .summary_detail {
   flex: 1 1 40rem;
-  min-width: 40rem;
-  max-height: 25rem;
+  width: 100%;
+  height: fit-content;
   border: 1px solid #333333;
   box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1), 0px 0px 40px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
+  padding: 4rem;
   display: block;
   flex-direction: column;
 }
@@ -85,6 +119,8 @@
 
 .summary_detail ul li {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: 1.5rem 0rem;
 }
 
@@ -94,4 +130,40 @@
 .summary_detail ul li:nth-child(4) {
   border-top: 1px solid #333333;
   padding-top: 1rem;
+}
+
+@media screen and (max-width: 1097px) {
+  .card_orderdetail {
+    height: auto;
+  }
+}
+@media screen and (max-width: 893px) {
+  .payment_info h3 {
+    font-size: calc(0.8rem + 1vh);
+  }
+  .payment_info p {
+    font-size: calc(0.8rem + 1vh) !important;
+  }
+  .orderdetail_wrapper {
+    height: auto;
+    min-height: auto;
+  }
+  .orderdetail_wrapper .col_1 {
+    width: 100%;
+    height: fit-content;
+  }
+  .orderdetail_wrapper div:nth-child(2) {
+    width: 100%;
+  }
+  .orderdetail_wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .summary_detail {
+    width: 100%;
+  }
+  .summary_detail ul li {
+    display: flex;
+    justify-content: space-between;
+  }
 }

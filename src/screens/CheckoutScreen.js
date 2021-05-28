@@ -96,24 +96,20 @@ function Checkout(props) {
         <h2>Summary</h2>
         <ul>
           <li>
-            <div>Items Price</div>
-            <div>$ {cart.itemsPrice}</div>
+            <p>Items Price</p>
+            <p>$ {cart.itemsPrice}</p>
           </li>
           <li>
-            <div>Tax Price</div>
-            <div>$ {cart.taxPrice}</div>
+            <p>Tax Price</p>
+            <p>$ {cart.taxPrice}</p>
           </li>
           <li>
-            <div>Delivery Price</div>
-            <div>$ {cart.deliveryPrice}</div>
+            <p>Delivery Price</p>
+            <p>$ {cart.deliveryPrice}</p>
           </li>
           <li>
-            <div>
-              <strong> Total Price</strong>
-            </div>
-            <div>
-              <strong> $ {cart.totalPrice}</strong>
-            </div>
+            <strong> Total Price</strong>
+            <strong> $ {cart.totalPrice.toFixed(2)}</strong>
           </li>
         </ul>
         <button onClick={completeCheckoutHandler}>Preceed Payment</button>
