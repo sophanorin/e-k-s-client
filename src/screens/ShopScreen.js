@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { listProducts, productPerPage } from "../actions/productActions";
+import { listProducts } from "../actions/productActions";
 import { useDispatch, useSelector } from "react-redux";
 import HeroSlider from "../components/HeroSlider.js";
 import Slider from "react-slick";
@@ -7,18 +7,13 @@ import MessageBox from "../components/MessageBox";
 import LoadingBox from "../components/LoadingBox";
 import * as shopStyles from "./ShopScreen.module.css";
 import Product from "../components/Product";
-import { categorylist } from "../actions/categoryActions";
+import Filter from "../components/Filter";
 import Pagination from "../components/Pagination";
 import { memo } from "react/cjs/react.production.min";
 
 function ShopScreen() {
-  const [price, setPrice] = useState(500);
-  const [filter, setFilter] = useState("All");
-  const [query, setQuery] = useState("");
+  const [filters, setFilters] = useState({ search: "", category: "" });
   const dispatch = useDispatch();
-
-  const categoryList = useSelector((state) => state.categoryList);
-  const { categories } = categoryList;
 
   const paginationState = useSelector((state) => state.paginationState);
 
@@ -36,28 +31,13 @@ function ShopScreen() {
     autoplaySpeed: 3000,
   };
 
-  const searchFilter = (product) => {
-    if (
-      product.title.toLowerCase().includes(query.toLowerCase()) ||
-      product.description.toLowerCase().includes(query.toLowerCase())
-    ) {
-      return true;
-    }
-  };
-
-  const categoryFilter = (product) => {
-    if (
-      product.category.toLowerCase() === filter.toLowerCase() ||
-      (filter.toLowerCase() === "all" &&
-        product.price > 0 &&
-        product.price <= price)
-    )
-      return true;
+  const FilterHandler = (values) => {
+    const newFilter = { ...filters, ...values };
+    setFilters(newFilter);
   };
 
   useEffect(() => {
     dispatch(listProducts());
-    dispatch(categorylist());
   }, [dispatch]);
 
   return (
@@ -83,59 +63,47 @@ function ShopScreen() {
             <div
               className={`${shopStyles.flex} ${shopStyles.products_section}`}
             >
-              <div className={shopStyles.filter}>
-                <ul>
-                  <li>
-                    <label htmlFor="search"> Search : </label>
-                    <input
-                      id="search"
-                      placeholder="Search"
-                      onKeyUp={(e) => setQuery(e.target.value)}
-                    />
-                  </li>
-                  <li>
-                    <label htmlFor="category">Category : </label>
-                    <select
-                      id="category"
-                      onChange={(e) => setFilter(e.target.value)}
-                    >
-                      <option selected>All</option>
-                      {categories &&
-                        categories.map((category, index) => (
-                          <option key={category._id}>{category.name}</option>
-                        ))}
-                    </select>
-                  </li>
-                  <li>
-                    <label htmlFor="price">Price : </label>
-                    <input
-                      id="price"
-                      type="range"
-                      name="price"
-                      min="0"
-                      max="1000"
-                      value={price}
-                      onChange={(e) => setPrice(e.target.value)}
-                      step="1"
-                    />
-                    <span>${price}</span>
-                  </li>
-                </ul>
-              </div>
+              {/* Start filter section*/}
+
+              <Filter FilterHandle={(values) => FilterHandler(values)} />
+
+              {/* End filter section */}
+
+              {/* Start list down product */}
+
               <div className={shopStyles.products_list}>
                 <div className={shopStyles.category__center}>
                   {products
+                    .filter((product) => {
+                      return (
+                        (product.title
+                          .toLowerCase()
+                          .includes(filters.search.toLowerCase()) ||
+                          product.description
+                            .toLowerCase()
+                            .includes(filters.search.toLowerCase())) &&
+                        product.category
+                          .toLowerCase()
+                          .includes(filters.category.toLowerCase())
+                      );
+                    })
                     .slice(paginationState.startIndex, paginationState.endIndex)
                     .map((product) => {
-                      if (categoryFilter(product)) {
-                        if (searchFilter(product))
-                          return (
-                            <Product key={product._id} product={product} />
-                          );
-                      }
+                      return <Product key={product._id} product={product} />;
                     })}
                 </div>
-                <Pagination products={products} amountBtn={5} itemPerPage={8} />
+
+                {/* End list down product */}
+
+                {/* Start Pagination */}
+
+                <Pagination
+                  products={products}
+                  amountBtn={5}
+                  itemPerPage={12}
+                />
+
+                {/* End Pagination */}
               </div>
             </div>
           </section>
